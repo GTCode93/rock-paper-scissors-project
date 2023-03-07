@@ -16,4 +16,13 @@ else number is <= 99, then return computerChoice is "Scissors"
 
 */
 
-let variable = 1;
+function getComputerChoice () {
+    let number = Math.floor(Math.random() * 100);
+    if (number <= 33) {
+        return 'Rock'
+    } else if (number <= 66) {
+        return 'Paper'
+    } else if (number <= 99) {
+        return 'Scissors'
+    }
+}
