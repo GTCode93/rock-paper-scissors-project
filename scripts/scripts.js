@@ -1,5 +1,6 @@
 function playerSelection() {
-    let selection = prompt('Input Rock, Paper, or Scissors below.');
+    prompt('Input Rock, Paper, or Scissors below.');
+    
 }
 
 function getComputerChoice() {
@@ -12,19 +13,3 @@ function getComputerChoice() {
         return 'Scissors'
     }
 }
-
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection();
-}
-
-/* 
-This function's intention is to only PROCESS THE ROUND AND COMPARE THE TWO FUNCTIONS ABOVE.
-
-playRound is a function and uses the variables playerSelection and computerSelection
-
-
-
-
-*/
-
-
