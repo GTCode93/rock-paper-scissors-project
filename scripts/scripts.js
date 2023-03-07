@@ -1,7 +1,3 @@
-function playerSelection() {
-    let selection = prompt('Input Rock, Paper, or Scissors below.');
-}
-
 function getComputerChoice() {
     let number = Math.floor(Math.random() * 100);
     if (number <= 33) {
@@ -13,6 +9,11 @@ function getComputerChoice() {
     }
 }
 
-let playerSelection = playerSelection();
-let computerChoice = getComputerChoice();
-function playRound()
+function playRound() {
+    let playerSelection = prompt("Input Rock, Paper, or Scissors below!")
+    
+}
+
+console.log(playRound());
+
+
