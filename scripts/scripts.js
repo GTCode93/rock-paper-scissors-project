@@ -27,14 +27,30 @@ function userInputFormatter() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
+    if (playerSelection = "Rock") {
+        if (computerSelection == "Scissors") {
+            return alert("You win!")
+        } else if (computerSelection == "Paper") {
+            return alert("You lose!")
+        } else if (computerSelection == "Rock") {
+            return alert("It's a tie!")
+        }
+    }
 }
+
 
 alert("Let's play Rock, Paper, Scissors!")
 playerSelection = userInputFormatter(selectionPrompt()); 
 /* This retrieves the variable playerSelection */
 
 
+computerSelection = getComputerChoice();
+alert(`Computer chose ${computerSelection}.`);
+/* Defines computerSelection */
+
+
+playRound(playerSelection, computerSelection);
+/* Run the playRound function to alert who wins and who loses */
 
 
 
@@ -88,7 +104,13 @@ case: with value "Scissors"
 
 ^^ else statements can be: computerInput is the same as playerSelection
 
-
+if playerSelection is Rock
+    if computerSelection is Scissors
+        return an alert function that says "You win!"
+    else if computerSelection is Paper
+        return an alert function that says "You lose!"
+    else (if they are the same)
+        return an alert "It's a tie!"
 
 */
 
