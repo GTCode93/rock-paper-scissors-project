@@ -21,22 +21,8 @@ function userInputFormatter() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = userInput;
-    computerSelection = computerInput;
+
 }
-
-alert("Let's play Rock, Paper, Scissors!");
-
-let userInput = prompt("Input Rock, Paper, or Scissors below.");
-userInput = userInputFormatter();
-
-let computerInput = getComputerChoice();
-
-let playerSelection = userInput;
-
-let computerSelection = computerInput;
-
-playRound();
 
 
 
@@ -57,6 +43,7 @@ switch and if...else statements
 
 *
 switch with value playerSelection
+
 case: with value "Rock"
     if computerInput is "Scissors"
         alert computerInput is computerInput. You win!
