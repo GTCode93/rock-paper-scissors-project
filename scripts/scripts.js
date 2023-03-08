@@ -64,7 +64,44 @@ function playRound(playerSelection, computerSelection) {
                 alert("It's a tie!")
                 break;
         }
-    } 
+        /* Rock works! */
+    } else if (playerSelection = "Paper") {
+        switch (computerSelection) {
+            case "Rock":
+                alert("You win!")
+                break;
+            case "Scissors":
+                alert("You lose!")
+                break;
+            case "Paper":
+                alert("It's a tie!")
+                break; 
+        }
+        /*
+        Paper does not work!
+        Paper-Scissors: you win!
+        Paper-Paper: you lose!
+        Paper-Rock: tie!
+        */
+    } else if (playerSelection = "Scissors") {
+        switch (computerSelection) {
+            case "Paper":
+                alert("You win!")
+                break;
+            case "Rock":
+                alert("You lose!")
+                break;
+            case "Scissors":
+                alert("It's a tie!")
+                break;
+        }
+        /*
+        Scissors does not work!
+        Scissors-Paper: lose
+        Scissors-Rock: tie!
+        Scissors-Scissors win:
+        */
+    }
 }
 
 
