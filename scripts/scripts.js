@@ -27,7 +27,7 @@ function userInputFormatter() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection = "Rock") {
+    /* if (playerSelection = "Rock") {
         if (computerSelection == "Scissors") {
             return alert("You win!")
         } else if (computerSelection == "Paper") {
@@ -35,7 +35,36 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection == "Rock") {
             return alert("It's a tie!")
         }
-    }
+    } else if (playerSelection = "Paper") {
+        if (computerSelection == "Rock") {
+            return alert("You win!")
+        } else if (computerSelection == "Scissors") {
+            return alert("You lose!")
+        } else if (computerSelection == "Paper") {
+            return alert("It's a tie!")
+        }
+    } else if (playerSelection = "Scissors") {
+        if (computerSelection == "Paper") {
+            return alert("You win!")
+        } else if (computerSelection == "Rock") {
+            return alert("You lose!")
+        } else if (computerSelection == "Scissors") {
+            return alert("It's a tie!")
+        }
+    } */
+    if (playerSelection = "Rock") {
+        switch (computerSelection) {
+            case "Scissors":
+                alert("You win!")
+                break;
+            case "Paper":
+                alert("You lose!")
+                break;
+            case "Rock": 
+                alert("It's a tie!")
+                break;
+        }
+    } 
 }
 
 
@@ -46,7 +75,7 @@ playerSelection = userInputFormatter(selectionPrompt());
 
 computerSelection = getComputerChoice();
 alert(`Computer chose ${computerSelection}.`);
-/* Defines computerSelection */
+/* Defines computerSelection and shows an alert of the value */
 
 
 playRound(playerSelection, computerSelection);
@@ -112,6 +141,26 @@ if playerSelection is Rock
     else (if they are the same)
         return an alert "It's a tie!"
 
+    Maybe inside the if else if statements, use switch conditionals and cases!
+
+    if playerSelection is Rock
+        switch with value of computerSelection
+
+        case if it's Scissors
+            return alert "You win!"
+            break
+
+        case if it's Paper
+            return alert "You lose!"
+            break
+
+        case if it's Rock
+            return alert "It's a tie!"
+            break
+
+    if playerSelection is Paper
+
+    if playerSelection is Scissors
 */
 
 
