@@ -9,10 +9,16 @@ function getComputerChoice() {
     }
 }
 
+function selectionPrompt() {
+    playerSelection = prompt("Type in Rock, Paper, or Scissors below to play!");
+    return playerSelection;
+
+}
+
 function userInputFormatter() {
-    firstCharacter = userInput.charAt(0);
-    restOfCharacters = userInput.slice(1, -1);
-    finalCharacter = userInput.slice(-1);
+    firstCharacter = playerSelection.charAt(0);
+    restOfCharacters = playerSelection.slice(1, -1);
+    finalCharacter = playerSelection.slice(-1);
 
     firstCharacter = firstCharacter.toUpperCase();
     restOfCharacters = restOfCharacters.toLowerCase();
@@ -23,6 +29,16 @@ function userInputFormatter() {
 function playRound(playerSelection, computerSelection) {
 
 }
+
+alert("Let's play Rock, Paper, Scissors!")
+playerSelection = userInputFormatter(selectionPrompt()); 
+/* This retrieves the variable playerSelection */
+
+
+
+
+
+
 
 
 
