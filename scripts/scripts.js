@@ -20,6 +20,11 @@ function userInputFormatter() {
     return firstCharacter + restOfCharacters + finalCharacter;
 }
 
+function playRound(playerSelection, computerSelection) {
+    playerSelection = userInput;
+    computerSelection = computerInput;
+}
+
 alert("Let's play Rock, Paper, Scissors!");
 
 let userInput = prompt("Input Rock, Paper, or Scissors below.");
@@ -33,12 +38,53 @@ let computerSelection = computerInput;
 
 playRound();
 
+
+
+
 /* 
 (function that compares computerInput and userInput and determines who wins the game)
 
 playRound is a function
 
+playerSelection is the same value as userInput
+
+computerSelection is the same value as computerInput
+
 Problem: how do we figure out an algorithm to solve this? We need to write an algorithm that will compare the different variations of a rock paper scissors game. The function playRound must be able to take on two values: "playerSelection" and "computerSelection" (which i could redeclare these as the same values as userInput and computerInput)
+
+(Attempt using switch conditional)
+switch and if...else statements
+
+*
+switch with value playerSelection
+case: with value "Rock"
+    if computerInput is "Scissors"
+        alert computerInput is computerInput. You win!
+    else if computerInput is "Paper"
+        alert computerInput is computerInput. You lose!
+    else computerInput is "Rock"
+        alert computerInput is computerInput. It's a tie!
+    break
+case: with value "Paper"
+    if computerInput is "Rock"
+    alert computerInput is computerInput. You win!
+    else if computerInput is "Scissors"
+        alert computerInput is computerInput. You lose!
+    else computerInput is "Paper"
+        alert computerInput is computerInput. It's a tie!
+    break
+case: with value "Scissors"
+    if computerInput is "Paper"
+        alert computerInput is computerInput. You win!
+    else if computerInput is "Rock"
+        alert computerInput is computerInput. You lose!
+    else computerInput is "Scissors"
+        alert computerInput is computerInput. It's a tie!
+    break
+*
+
+^^ else statements can be: computerInput is the same as playerSelection
+
 
 
 */
