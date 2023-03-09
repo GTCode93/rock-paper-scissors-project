@@ -84,10 +84,11 @@ function playRound(playerSelection, computerSelection) {
                 break; 
         }
         /*
-        Paper does not work!
-        Paper-Scissors: you win!
-        Paper-Paper: you lose!
-        Paper-Rock: tie!
+        Paper does not work
+
+        Paper-Scissors: win
+        Paper-Paper: lose
+        Paper-Rock: tie
         */
     } else if (playerSelection = "Scissors") {
         switch (computerSelection) {
@@ -102,13 +103,16 @@ function playRound(playerSelection, computerSelection) {
                 break;
         }
         /*
-        Scissors does not work!
+        Scissors does not work
+
         Scissors-Paper: lose
-        Scissors-Rock: tie!
-        Scissors-Scissors win:
+        Scissors-Rock: tie
+        Scissors-Scissors win
         */
 
         /* I think there's no true difference between using pure if...else statements and if else statements with nested switch. They both have the same issue: Rock works but the rest doesn't. */
+
+        /* Maybe create a specific playRound function for Rock Paper and Scissors? */
     }
 }
 
@@ -134,78 +138,110 @@ playRound(playerSelection, computerSelection);
 
 
 /* 
-(function that compares computerInput and userInput and determines who wins the game)
+playRound function attempts:
+1
+if (playerSelection = "Rock") {
+        if (computerSelection == "Scissors") {
+            return alert("You win!")
+        } else if (computerSelection == "Paper") {
+            return alert("You lose!")
+        } else if (computerSelection == "Rock") {
+            return alert("It's a tie!")
+        }
+    } else if (playerSelection = "Paper") {
+        if (computerSelection == "Rock") {
+            return alert("You win!")
+        } else if (computerSelection == "Scissors") {
+            return alert("You lose!")
+        } else if (computerSelection == "Paper") {
+            return alert("It's a tie!")
+        }
+    } else if (playerSelection = "Scissors") {
+        if (computerSelection == "Paper") {
+            return alert("You win!")
+        } else if (computerSelection == "Rock") {
+            return alert("You lose!")
+        } else if (computerSelection == "Scissors") {
+            return alert("It's a tie!")
+        }
+
+2
+if (playerSelection = "Rock") {
+        switch (computerSelection) {
+            case "Scissors":
+                alert("You win!")
+                break;
+            case "Paper":
+                alert("You lose!")
+                break;
+            case "Rock": 
+                alert("It's a tie!")
+                break;
+        }
+            Rock works! 
+    } else if (playerSelection = "Paper") {
+        switch (computerSelection) {
+            case "Rock":
+                alert("You win!")
+                break;
+            case "Scissors":
+                alert("You lose!")
+                break;
+            case "Paper":
+                alert("It's a tie!")
+                break; 
+        }
+        
+        Paper does not work
+
+        Paper-Scissors: win
+        Paper-Paper: lose
+        Paper-Rock: tie
+        
+    } else if (playerSelection = "Scissors") {
+        switch (computerSelection) {
+            case "Paper":
+                alert("You win!")
+                break;
+            case "Rock":
+                alert("You lose!")
+                break;
+            case "Scissors":
+                alert("It's a tie!")
+                break;
+        }
+
+3
+switch conditional with if else statements inside?
+
+PSEUDOCODE: 
 
 playRound is a function
 
-playerSelection is the same value as userInput
+switch conditional with expression playerSelection
 
-computerSelection is the same value as computerInput
+        case playerSelection is "Rock"
+            if computerSelection is "Scissors"
+                alert You win!
+            else if computerSelection is "Paper"
+                alert You lose!
+            else if computerSelection is "Rock"
+                alert It's a tie!
+         case playerSelection is "Paper"
+            if computerSelection is "Rock"
+                alert You win!
+            else if computerSelection is "Scissors"
+                alert You lose!
+            else if computerSelection is "Paper"
+                alert It's a tie!
+        case playerSelection is "Scissors"
+            if computerSelection is "Paper"
+                alert You win!
+            else if computerSelection is "Rock"
+                alert You lose!
+            else if computerSelection is "Scissors"
+                alert It's a tie!
 
-Problem: how do we figure out an algorithm to solve this? We need to write an algorithm that will compare the different variations of a rock paper scissors game. The function playRound must be able to take on two values: "playerSelection" and "computerSelection" (which i could redeclare these as the same values as userInput and computerInput)
-
-(Attempt using switch conditional)
-switch and if...else statements
-
-*
-switch with value playerSelection
-
-case: with value "Rock"
-    if computerInput is "Scissors"
-        alert computerInput is computerInput. You win!
-    else if computerInput is "Paper"
-        alert computerInput is computerInput. You lose!
-    else computerInput is "Rock"
-        alert computerInput is computerInput. It's a tie!
-    break
-case: with value "Paper"
-    if computerInput is "Rock"
-    alert computerInput is computerInput. You win!
-    else if computerInput is "Scissors"
-        alert computerInput is computerInput. You lose!
-    else computerInput is "Paper"
-        alert computerInput is computerInput. It's a tie!
-    break
-case: with value "Scissors"
-    if computerInput is "Paper"
-        alert computerInput is computerInput. You win!
-    else if computerInput is "Rock"
-        alert computerInput is computerInput. You lose!
-    else computerInput is "Scissors"
-        alert computerInput is computerInput. It's a tie!
-    break
-*
-
-^^ else statements can be: computerInput is the same as playerSelection
-
-if playerSelection is Rock
-    if computerSelection is Scissors
-        return an alert function that says "You win!"
-    else if computerSelection is Paper
-        return an alert function that says "You lose!"
-    else (if they are the same)
-        return an alert "It's a tie!"
-
-    Maybe inside the if else if statements, use switch conditionals and cases!
-
-    if playerSelection is Rock
-        switch with value of computerSelection
-
-        case if it's Scissors
-            return alert "You win!"
-            break
-
-        case if it's Paper
-            return alert "You lose!"
-            break
-
-        case if it's Rock
-            return alert "It's a tie!"
-            break
-
-    if playerSelection is Paper
-
-    if playerSelection is Scissors
 */
 
 
