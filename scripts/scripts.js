@@ -33,87 +33,50 @@ function userInputFormatter() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    /* if (playerSelection = "Rock") {
-        if (computerSelection == "Scissors") {
-            return alert("You win!")
-        } else if (computerSelection == "Paper") {
-            return alert("You lose!")
-        } else if (computerSelection == "Rock") {
-            return alert("It's a tie!")
-        }
-    } else if (playerSelection = "Paper") {
-        if (computerSelection == "Rock") {
-            return alert("You win!")
-        } else if (computerSelection == "Scissors") {
-            return alert("You lose!")
-        } else if (computerSelection == "Paper") {
-            return alert("It's a tie!")
-        }
-    } else if (playerSelection = "Scissors") {
-        if (computerSelection == "Paper") {
-            return alert("You win!")
-        } else if (computerSelection == "Rock") {
-            return alert("You lose!")
-        } else if (computerSelection == "Scissors") {
-            return alert("It's a tie!")
-        }
-    } */
-    if (playerSelection = "Rock") {
-        switch (computerSelection) {
-            case "Scissors":
+    switch (playerSelection) {
+        case "Rock":
+            if (computerSelection == "Scissors") {
                 alert("You win!")
-                break;
-            case "Paper":
+            } else if (computerSelection == "Paper") {
                 alert("You lose!")
-                break;
-            case "Rock": 
+            } else if (computerSelection == "Rock") {
                 alert("It's a tie!")
-                break;
-        }
-        /* Rock works! */
-    } else if (playerSelection = "Paper") {
-        switch (computerSelection) {
-            case "Rock":
+            }
+            break;
+        case "Paper":
+            if (computerSelection == "Rock") {
                 alert("You win!")
-                break;
-            case "Scissors":
+            } else if (computerSelection == "Scissors") {
                 alert("You lose!")
-                break;
-            case "Paper":
+            } else if (computerSelection == "Paper") {
                 alert("It's a tie!")
-                break; 
-        }
-        /*
-        Paper does not work
-
-        Paper-Scissors: win
-        Paper-Paper: lose
-        Paper-Rock: tie
-        */
-    } else if (playerSelection = "Scissors") {
-        switch (computerSelection) {
-            case "Paper":
+            }
+            break;
+        case "Scissors":
+            if (computerSelection == "Paper") {
                 alert("You win!")
-                break;
-            case "Rock":
+            } else if (computerSelection == "Rock") {
                 alert("You lose!")
-                break;
-            case "Scissors":
+            } else if (computerSelection == "Scissors") {
                 alert("It's a tie!")
-                break;
-        }
-        /*
-        Scissors does not work
-
-        Scissors-Paper: lose
-        Scissors-Rock: tie
-        Scissors-Scissors win
-        */
-
-        /* I think there's no true difference between using pure if...else statements and if else statements with nested switch. They both have the same issue: Rock works but the rest doesn't. */
-
-        /* Maybe create a specific playRound function for Rock Paper and Scissors? */
+            }
+            break;
     }
+    /* 
+    Rock-Scissors: win
+    Rock-Paper: lose
+    Rock-Rock: tie
+
+    Paper-Rock: win
+    Paper-Scissors: lose
+    Paper-Paper: tie
+
+    Scissors-Paper: win
+    Scissors-Rock: lose
+    Scissors-Scissors: tie
+
+    IT WORKS!
+    */
 }
 
 
@@ -138,6 +101,11 @@ playRound(playerSelection, computerSelection);
 
 
 /* 
+
+Maybe create a specific playRound function for Rock Paper and Scissors? 
+
+I think there's no true difference between using pure if...else statements and if else statements with nested switch. They both have the same issue: Rock works but the rest doesn't.
+
 playRound function attempts:
 1
 if (playerSelection = "Rock") {
