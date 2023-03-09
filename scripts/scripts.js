@@ -2,10 +2,13 @@ function getComputerChoice() {
     let number = Math.floor(Math.random() * 100);
     if (number <= 33) {
         return "Rock"
+        /* If number is 33 or lower, return Rock */
     } else if (number <= 66) {
         return "Paper"
+        /* If number is 66 or lower (but above 33), return Paper */
     } else if (number <= 99) {
         return "Scissors"
+        /* If number is 99 or lower (but above 66), return Scissors */
     }
 }
 
@@ -19,10 +22,13 @@ function userInputFormatter() {
     firstCharacter = playerSelection.charAt(0);
     restOfCharacters = playerSelection.slice(1, -1);
     finalCharacter = playerSelection.slice(-1);
+    /* Assigns different parts of the string to variables */
 
     firstCharacter = firstCharacter.toUpperCase();
     restOfCharacters = restOfCharacters.toLowerCase();
     finalCharacter = finalCharacter.toLowerCase();
+    /* Capitalize the first character and lower case the rest */
+
     return firstCharacter + restOfCharacters + finalCharacter;
 }
 
@@ -101,6 +107,8 @@ function playRound(playerSelection, computerSelection) {
         Scissors-Rock: tie!
         Scissors-Scissors win:
         */
+
+        /* I think there's no true difference between using pure if...else statements and if else statements with nested switch. They both have the same issue: Rock works but the rest doesn't. */
     }
 }
 
