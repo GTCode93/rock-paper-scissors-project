@@ -61,24 +61,9 @@ function playRound(playerSelection, computerSelection) {
                 alert("It's a tie!")
             }
             break;
+            /* How do I set a variable's value with the outcome of this function? May need to edit how this works to assign game() function's value. */
     }
-    /* 
-    Rock-Scissors: win
-    Rock-Paper: lose
-    Rock-Rock: tie
-
-    Paper-Rock: win
-    Paper-Scissors: lose
-    Paper-Paper: tie
-
-    Scissors-Paper: win
-    Scissors-Rock: lose
-    Scissors-Scissors: tie
-
-    IT WORKS!
-    */
 }
-
 
 alert("Let's play Rock, Paper, Scissors!")
 playerSelection = userInputFormatter(selectionPrompt()); 
@@ -91,97 +76,13 @@ alert(`Computer chose ${computerSelection}.`);
 
 
 playRound(playerSelection, computerSelection);
-/* Run the playRound function to alert who wins and who loses */
-
-
-
-
-
-
+/* Run the playRound function to decide and alert if you win, lose, or it's a tie */
+/* Rework the code once game() is written and runs so you run game() and not just playRound! */
 
 
 /* 
-
-Maybe create a specific playRound function for Rock Paper and Scissors? 
-
-I think there's no true difference between using pure if...else statements and if else statements with nested switch. They both have the same issue: Rock works but the rest doesn't.
-
-playRound function attempts:
-1
-if (playerSelection = "Rock") {
-        if (computerSelection == "Scissors") {
-            return alert("You win!")
-        } else if (computerSelection == "Paper") {
-            return alert("You lose!")
-        } else if (computerSelection == "Rock") {
-            return alert("It's a tie!")
-        }
-    } else if (playerSelection = "Paper") {
-        if (computerSelection == "Rock") {
-            return alert("You win!")
-        } else if (computerSelection == "Scissors") {
-            return alert("You lose!")
-        } else if (computerSelection == "Paper") {
-            return alert("It's a tie!")
-        }
-    } else if (playerSelection = "Scissors") {
-        if (computerSelection == "Paper") {
-            return alert("You win!")
-        } else if (computerSelection == "Rock") {
-            return alert("You lose!")
-        } else if (computerSelection == "Scissors") {
-            return alert("It's a tie!")
-        }
-
-2
-if (playerSelection = "Rock") {
-        switch (computerSelection) {
-            case "Scissors":
-                alert("You win!")
-                break;
-            case "Paper":
-                alert("You lose!")
-                break;
-            case "Rock": 
-                alert("It's a tie!")
-                break;
-        }
-            Rock works! 
-    } else if (playerSelection = "Paper") {
-        switch (computerSelection) {
-            case "Rock":
-                alert("You win!")
-                break;
-            case "Scissors":
-                alert("You lose!")
-                break;
-            case "Paper":
-                alert("It's a tie!")
-                break; 
-        }
-        
-        Paper does not work
-
-        Paper-Scissors: win
-        Paper-Paper: lose
-        Paper-Rock: tie
-        
-    } else if (playerSelection = "Scissors") {
-        switch (computerSelection) {
-            case "Paper":
-                alert("You win!")
-                break;
-            case "Rock":
-                alert("You lose!")
-                break;
-            case "Scissors":
-                alert("It's a tie!")
-                break;
-        }
-
-3
-switch conditional with if else statements inside?
-
+playRound function:
+(switch conditional with if else statements inside)
 PSEUDOCODE: 
 
 playRound is a function
@@ -209,7 +110,31 @@ switch conditional with expression playerSelection
                 alert You lose!
             else if computerSelection is "Scissors"
                 alert It's a tie!
+*/
 
+/* 
+Problem: Make function game() that calls the function playRound() inside of it. Program game() to play a five round game that keeps score and reports a winner or loser at the end.
+
+* Use loops! below is some code to help play the five round:
+    for (let i = 0); i <5; i++) {
+        Your code here!
+    }
+* use prompt() to get input from the user
+    I think you ignore this since the set up now already has a prompt() function in use!
+* Remember to use console.log() to display the results of each round and the winner at the end
+
+* Feel free to re-work previous functions if you need to. Specifically, you may want to change the return value to something more useful
+
+* Feel free to create more helpful functions if you think it would be useful!
+
+
+PSEUDOCODE:
+(First Attempt)
+game() is a function without a set value
+
+use loop code: for (let i = 0); i <5; i++) 
+(i don't know how to code code with this function. Experiment or Google it! )
+    (nested)
 */
 
 
