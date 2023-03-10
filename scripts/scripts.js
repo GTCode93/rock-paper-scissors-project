@@ -2,13 +2,10 @@ function getComputerChoice() {
     let number = Math.floor(Math.random() * 100);
     if (number <= 33) {
         return "Rock"
-        /* If number is 33 or lower, return Rock */
     } else if (number <= 66) {
         return "Paper"
-        /* If number is 66 or lower (but above 33), return Paper */
     } else if (number <= 99) {
         return "Scissors"
-        /* If number is 99 or lower (but above 66), return Scissors */
     }
 }
 
@@ -22,12 +19,10 @@ function userInputFormatter() {
     firstCharacter = playerSelection.charAt(0);
     restOfCharacters = playerSelection.slice(1, -1);
     finalCharacter = playerSelection.slice(-1);
-    /* Assigns different parts of the string to variables */
 
     firstCharacter = firstCharacter.toUpperCase();
     restOfCharacters = restOfCharacters.toLowerCase();
     finalCharacter = finalCharacter.toLowerCase();
-    /* Capitalize the first character and lower case the rest */
 
     return firstCharacter + restOfCharacters + finalCharacter;
 }
@@ -63,23 +58,7 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
 }
-/* 
-Make a function that alerts the round's outcome and only that
 
-Pseudocode:
-alertRound is a function
-
-roundOutcome is a variable which has a value of playRound(playerSelection, computerSelection)
-
-switch conditional with value roundOutcome
-    case "Win"
-        alert ("You win this round!")
-        break
-    case "Lose"
-        alert ("You lose this round!")
-    case "Tie"
-        alert ("It's a tie this round!")
-*/
 function alertRound () {
     roundOutcome = playRound(playerSelection, computerSelection)
     switch (roundOutcome) {
@@ -106,53 +85,8 @@ function game() {
 }
 
 
-
-/* alert("Let's play Rock, Paper, Scissors!")
-playerSelection = userInputFormatter(selectionPrompt()); 
-
-
-computerSelection = getComputerChoice();
-alert(`Computer chose ${computerSelection}.`);
-
-let gameOutcome;
-gameOutcome = playRound(playerSelection, computerSelection);
- */
 game();
 
-
-
-
-/* 
-playRound function:
-(switch conditional with if else statements inside)
-PSEUDOCODE: 
-
-playRound is a function
-
-switch conditional with expression playerSelection
-
-        case playerSelection is "Rock"
-            if computerSelection is "Scissors"
-                alert You win!
-            else if computerSelection is "Paper"
-                alert You lose!
-            else if computerSelection is "Rock"
-                alert It's a tie!
-         case playerSelection is "Paper"
-            if computerSelection is "Rock"
-                alert You win!
-            else if computerSelection is "Scissors"
-                alert You lose!
-            else if computerSelection is "Paper"
-                alert It's a tie!
-        case playerSelection is "Scissors"
-            if computerSelection is "Paper"
-                alert You win!
-            else if computerSelection is "Rock"
-                alert You lose!
-            else if computerSelection is "Scissors"
-                alert It's a tie!
-*/
 
 /* 
 Problem: Make function game() that calls the function playRound() inside of it. Program game() to play a five round game that keeps score and reports a winner or loser at the end.
@@ -168,10 +102,6 @@ Problem: Make function game() that calls the function playRound() inside of it. 
 * Feel free to re-work previous functions if you need to. Specifically, you may want to change the return value to something more useful
 
 * Feel free to create more helpful functions if you think it would be useful!
-
-
-
-*(My own words) let's see about putting all of the functions into game(). The only thing we should be able to run and everything works just fine is the function game()
 
 PSEUDOCODE:
 */
