@@ -63,6 +63,37 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
 }
+/* 
+Make a function that alerts the round's outcome and only that
+
+Pseudocode:
+alertRound is a function
+
+roundOutcome is a variable which has a value of playRound(playerSelection, computerSelection)
+
+switch conditional with value roundOutcome
+    case "Win"
+        alert ("You win this round!")
+        break
+    case "Lose"
+        alert ("You lose this round!")
+    case "Tie"
+        alert ("It's a tie this round!")
+*/
+function alertRound () {
+    roundOutcome = playRound(playerSelection, computerSelection)
+    switch (roundOutcome) {
+        case "Win":
+            alert("You win this round!")
+            break;
+        case "Lose":
+            alert("You lose this round!")
+            break;
+        case "Tie":
+            alert("It's a tie this round!")
+            break;
+    }
+}
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
@@ -70,8 +101,7 @@ function game() {
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
         alert(`Computer chose ${computerSelection}.`);
-        gameOutcome = playRound(playerSelection, computerSelection);
-        /* gameOutcome ends up being the very last round */
+        alertRound();
     }
 }
 
