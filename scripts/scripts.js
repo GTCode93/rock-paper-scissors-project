@@ -36,38 +36,31 @@ function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case "Rock":
             if (computerSelection == "Scissors") {
-                alert("You win!");
                 return "Win";
             } else if (computerSelection == "Paper") {
-                alert("You lose!");
                 return "Lose";
             } else if (computerSelection == "Rock") {
-                alert("It's a tie!");
                 return "Tie"
             }
             break;
         case "Paper":
             if (computerSelection == "Rock") {
-                alert("You win!");
                 return "Win";
             } else if (computerSelection == "Scissors") {
-                alert("You lose!");
                 return "Lose";
             } else if (computerSelection == "Paper") {
-                alert("It's a tie!");
                 return "Tie";
             }
             break;
         case "Scissors":
             if (computerSelection == "Paper") {
-                alert("You win!");
+                return "Win";
             } else if (computerSelection == "Rock") {
-                alert("You lose!");
+                return "Lose";
             } else if (computerSelection == "Scissors") {
-                alert("It's a tie!");
+                return "Tie";
             }
             break;
-            /* How do I set a variable's value with the outcome of this function? */
     }
 }
 
@@ -78,6 +71,7 @@ function game() {
         computerSelection = getComputerChoice();
         alert(`Computer chose ${computerSelection}.`);
         gameOutcome = playRound(playerSelection, computerSelection);
+        /* gameOutcome ends up being the very last round */
     }
 }
 
@@ -150,12 +144,6 @@ Problem: Make function game() that calls the function playRound() inside of it. 
 *(My own words) let's see about putting all of the functions into game(). The only thing we should be able to run and everything works just fine is the function game()
 
 PSEUDOCODE:
-(First Attempt)
-game() is a function without a set value
-
-use loop code: for (let i = 0); i <5; i++) 
-(i don't know how to code code with this function. Experiment or Google it! )
-    (nested)
 */
 
 
