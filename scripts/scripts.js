@@ -12,7 +12,6 @@ function getComputerChoice() {
 function selectionPrompt() {
     playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.");
     return playerSelection;
-
 }
 
 function userInputFormatter() {
@@ -74,14 +73,56 @@ function alertRound () {
     }
 }
 
+/* 
+Make a function that gives a point (or doesn't give a point) to either player or computer based on round outcome 
+
+Pseudocode:
+
+pointGiver is a function
+
+if playRound function is "Win"
+    playerPoints will increment (look back at how to do this)
+
+else if playRound function is "Lose"
+    computerPoints will increment
+
+else if playRound function is "Tie"
+    playerPoints is what playerPoints already is
+    computerPoints is what computerPoints already is
+
+*/
+
+
+
+/* 
+Make a separate function that checks on the points and alerts who wins or if the rounds should keep going until someone wins.
+
+Pseudocode:
+
+whoWins is a function
+
+if playerPoints is 5 or more
+    alert("You reached 5 points, you win the game!")
+else if computerPoints is 5 or more
+    alert("Computer reached 5 points, you lose the game!")
+else
+    continue the rounds
+
+*/
+
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
-    for (let i = 0; i < 5; i++) {
+
+    for (let i = 0; i < 1000; i++) { /* loop that plays rounds */
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
         alert(`Computer chose ${computerSelection}.`);
         alertRound();
+
+        playerPoints = 0;
+        computerPoints = 0;
     }
+    roundOutcome = playRound(playerSelection, computerSelection);
 }
 
 
@@ -103,7 +144,31 @@ Problem: Make function game() that calls the function playRound() inside of it. 
 
 * Feel free to create more helpful functions if you think it would be useful!
 
-PSEUDOCODE:
+
+PSEUDOCODE(I;m writing this as i figure it out):
+
+game() is a function
+
+alert "Let's play rock paper scissors first to 5 wins"
+playerSelection is a variable the user inputs (R, P, or S)
+computerSelection is a variable a computer inputs (R,P, or S)
+alert what the computer chose
+
+alertRound function alerts what the outcome of the round is
+
+(What we need after this is several things:
+
+* How to keep a point system between player and computer
+* How to keep the rounds running until player or computer hits 5 points
+* How to use loops in this context 
+)
+
+ATTEMPTS:
+Let's say we have a loop for the player and a loop for the computer points. If player gains a point (or takes a "Win",) the loop runs and a variable takes on one point where the variable had first started at 0. Ditto with the computer. Once player or computer has reached 5, return an alert that a certain side has won.
+
+To keep the round running, use the same loop set up but have the maximum number of the loop be the maximum number possible until either player or computer reaches 5 wins. 
+    Doesn't keep in mind ties...
+
 */
 
 
