@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 
 function selectionPrompt() {
-    playerSelection = prompt("Type in Rock, Paper, or Scissors below to play!");
+    playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.");
     return playerSelection;
 
 }
@@ -36,48 +36,66 @@ function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case "Rock":
             if (computerSelection == "Scissors") {
-                alert("You win!")
+                alert("You win!");
+                return "Win";
             } else if (computerSelection == "Paper") {
-                alert("You lose!")
+                alert("You lose!");
+                return "Lose";
             } else if (computerSelection == "Rock") {
-                alert("It's a tie!")
+                alert("It's a tie!");
+                return "Tie"
             }
             break;
         case "Paper":
             if (computerSelection == "Rock") {
-                alert("You win!")
+                alert("You win!");
+                return "Win";
             } else if (computerSelection == "Scissors") {
-                alert("You lose!")
+                alert("You lose!");
+                return "Lose";
             } else if (computerSelection == "Paper") {
-                alert("It's a tie!")
+                alert("It's a tie!");
+                return "Tie";
             }
             break;
         case "Scissors":
             if (computerSelection == "Paper") {
-                alert("You win!")
+                alert("You win!");
             } else if (computerSelection == "Rock") {
-                alert("You lose!")
+                alert("You lose!");
             } else if (computerSelection == "Scissors") {
-                alert("It's a tie!")
+                alert("It's a tie!");
             }
             break;
-            /* How do I set a variable's value with the outcome of this function? May need to edit how this works to assign game() function's value. */
+            /* How do I set a variable's value with the outcome of this function? */
     }
 }
 
-alert("Let's play Rock, Paper, Scissors!")
+function game() {
+    alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
+    for (let i = 0; i < 5; i++) {
+        playerSelection = userInputFormatter(selectionPrompt());
+        computerSelection = getComputerChoice();
+        alert(`Computer chose ${computerSelection}.`);
+        gameOutcome = playRound(playerSelection, computerSelection);
+    }
+}
+
+
+
+/* alert("Let's play Rock, Paper, Scissors!")
 playerSelection = userInputFormatter(selectionPrompt()); 
-/* This retrieves the variable playerSelection */
 
 
 computerSelection = getComputerChoice();
 alert(`Computer chose ${computerSelection}.`);
-/* Defines computerSelection and shows an alert of the value */
+
+let gameOutcome;
+gameOutcome = playRound(playerSelection, computerSelection);
+ */
+game();
 
 
-playRound(playerSelection, computerSelection);
-/* Run the playRound function to decide and alert if you win, lose, or it's a tie */
-/* Rework the code once game() is written and runs so you run game() and not just playRound! */
 
 
 /* 
@@ -127,6 +145,9 @@ Problem: Make function game() that calls the function playRound() inside of it. 
 
 * Feel free to create more helpful functions if you think it would be useful!
 
+
+
+*(My own words) let's see about putting all of the functions into game(). The only thing we should be able to run and everything works just fine is the function game()
 
 PSEUDOCODE:
 (First Attempt)
