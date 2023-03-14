@@ -15,6 +15,7 @@ function selectionPrompt() {
 }
 
 function userInputFormatter() {
+    /* This function will return toss an error "Uncaught TypeError: Cannot read properties of null (reading 'charAt')" if playerSelection is null. This happens due to cancelling the selectionPrompt() function which causes the variable playerSelection to be null, and this function cannot process the value null.*/
     firstCharacter = playerSelection.charAt(0);
     restOfCharacters = playerSelection.slice(1, -1);
     finalCharacter = playerSelection.slice(-1);
