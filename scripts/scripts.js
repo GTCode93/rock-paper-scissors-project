@@ -74,6 +74,22 @@ function alertRound () {
     }
 }
 
+function pointGiver() {
+    playerPoints = 0;
+    computerPoints = 0;
+    switch (playRound(playerSelection, computerSelection)) {
+        case "Win":
+            playerPoints = ++playerPoints;
+            break;
+        case "Lose":
+            computerPoints = ++computerPoints;
+            break;
+        case "Tie":
+            playerPoints = playerPoints;
+            computerPoints = computerPoints;
+            break;
+    }
+}
 /* 
 Make a function that gives a point (or doesn't give a point) to either player or computer based on round outcome 
 
@@ -91,6 +107,16 @@ else if playRound function is "Tie"
     playerPoints is what playerPoints already is
     computerPoints is what computerPoints already is
 
+____
+
+switch conditional with value playRound() function
+    case "Win"
+        add 1 to playerPoints
+    case "Lose"
+        add 1 to computerPoints
+    case "Tie"
+        playerPoints is what playerPoints already is
+        computerPoints is what computerPoints already is
 */
 
 
@@ -120,10 +146,10 @@ function game() {
         alert(`Computer chose ${computerSelection}.`);
         alertRound();
 
-        playerPoints = 0;
-        computerPoints = 0;
+        pointGiver();
+        console.log(playerPoints);
+        console.log(computerPoints);
     }
-    roundOutcome = playRound(playerSelection, computerSelection);
 }
 
 
