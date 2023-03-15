@@ -97,28 +97,13 @@ function alertRoundScore() {
 function whoWins () {
     if (playerPoints >= 5) {
         alert("Congratulations you win!")
-        alert("Please close this tab or the rounds will continue.")
+        return "Game Over";
     } else if (computerPoints >= 5) {
         alert("Sorry, you've lost!")
-        alert("Please close this tab or the rounds will continue.")
+        return "Game Over";
     } else {
     }
 }
-/* 
-Make a separate function that checks on the points and alerts who wins or if the rounds should keep going until someone wins.
-
-Pseudocode:
-
-whoWins is a function
-
-if playerPoints is 5 or more
-    alert("You reached 5 points, you win the game!")
-else if computerPoints is 5 or more
-    alert("Computer reached 5 points, you lose the game!")
-else
-    continue the rounds
-
-*/
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
@@ -133,14 +118,13 @@ function game() {
         alertRound();
         pointGiver();
         alertRoundScore();
-        whoWins();
+        if (whoWins() == "Game Over") {
+            break;
+        }
     }
-    alert("This is not an error. You've been here for 100 rounds. You can go.")
 }
 
-
 game();
-
 
 /* 
 Problem: Make function game() that calls the function playRound() inside of it. Program game() to play a five round game that keeps score and reports a winner or loser at the end.
