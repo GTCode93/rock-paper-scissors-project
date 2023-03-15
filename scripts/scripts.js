@@ -94,16 +94,16 @@ function alertRoundScore() {
     alert(`The current score is ${playerPoints}-${computerPoints}`)
 }
 
-/* Make a function for that alerts the score after a round is over
-
-Pseudocode:
-
-roundScore is a function
-
-alert a string that says `The current score is ${playerPoints}-${computerPoints}`
-
-*/
-
+function whoWins () {
+    if (playerPoints >= 5) {
+        alert("Congratulations you win!")
+        alert("Please close this tab or the rounds will continue.")
+    } else if (computerPoints >= 5) {
+        alert("Sorry, you've lost!")
+        alert("Please close this tab or the rounds will continue.")
+    } else {
+    }
+}
 /* 
 Make a separate function that checks on the points and alerts who wins or if the rounds should keep going until someone wins.
 
@@ -122,18 +122,20 @@ else
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
+
     playerPoints = 0;
     computerPoints = 0;
-    for (let i = 0; playerPoints < 5; i++) {
+
+    for (let i = 0; i < 100; i++) {
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
         alert(`Computer chose ${computerSelection}.`);
         alertRound();
-
         pointGiver();
         alertRoundScore();
+        whoWins();
     }
-    alert("Congratulations! You win! :D")
+    alert("This is not an error. You've been here for 100 rounds. You can go.")
 }
 
 
