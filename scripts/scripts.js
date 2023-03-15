@@ -120,52 +120,12 @@ function game() {
         alertRoundScore();
         if (whoWins() == "Game Over") {
             break;
+        } else {
         }
     }
 }
 
 game();
 
-/* 
-Problem: Make function game() that calls the function playRound() inside of it. Program game() to play a five round game that keeps score and reports a winner or loser at the end.
-
-* Use loops! below is some code to help play the five round:
-    for (let i = 0); i <5; i++) {
-        Your code here!
-    }
-* use prompt() to get input from the user
-    I think you ignore this since the set up now already has a prompt() function in use!
-* Remember to use console.log() to display the results of each round and the winner at the end
-
-* Feel free to re-work previous functions if you need to. Specifically, you may want to change the return value to something more useful
-
-* Feel free to create more helpful functions if you think it would be useful!
-
-
-PSEUDOCODE(I;m writing this as i figure it out):
-
-game() is a function
-
-alert "Let's play rock paper scissors first to 5 wins"
-playerSelection is a variable the user inputs (R, P, or S)
-computerSelection is a variable a computer inputs (R,P, or S)
-alert what the computer chose
-
-alertRound function alerts what the outcome of the round is
-
-(What we need after this is several things:
-
-* How to keep a point system between player and computer
-* How to keep the rounds running until player or computer hits 5 points
-* How to use loops in this context 
-)
-
-ATTEMPTS:
-Let's say we have a loop for the player and a loop for the computer points. If player gains a point (or takes a "Win",) the loop runs and a variable takes on one point where the variable had first started at 0. Ditto with the computer. Once player or computer has reached 5, return an alert that a certain side has won.
-
-To keep the round running, use the same loop set up but have the maximum number of the loop be the maximum number possible until either player or computer reaches 5 wins. 
-    Doesn't keep in mind ties...
-
-*/
 
 
