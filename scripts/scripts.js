@@ -87,38 +87,21 @@ function pointGiver() {
             computerPoints = computerPoints;
             break;
     }
-    /* Problem: this function doesn't stack the increments, the only outcomes are win 1-0, lose 0-1, or tie 0-0*/
 }
-/* 
-Make a function that gives a point (or doesn't give a point) to either player or computer based on round outcome 
+
+function roundScore() {
+    alert(`The current score is ${playerPoints}-${computerPoints}`)
+}
+
+/* Make a function for that alerts the score after a round is over
 
 Pseudocode:
 
-pointGiver is a function
+roundScore is a function
 
-if playRound function is "Win"
-    playerPoints will increment (look back at how to do this)
+alert a string that says `The current score is ${playerPoints}-${computerPoints}`
 
-else if playRound function is "Lose"
-    computerPoints will increment
-
-else if playRound function is "Tie"
-    playerPoints is what playerPoints already is
-    computerPoints is what computerPoints already is
-
-____
-
-switch conditional with value playRound() function
-    case "Win"
-        add 1 to playerPoints
-    case "Lose"
-        add 1 to computerPoints
-    case "Tie"
-        playerPoints is what playerPoints already is
-        computerPoints is what computerPoints already is
 */
-
-
 
 /* 
 Make a separate function that checks on the points and alerts who wins or if the rounds should keep going until someone wins.
@@ -140,16 +123,16 @@ function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
     playerPoints = 0;
     computerPoints = 0;
-    for (let i = 0; playerPoints < 5; i++) { /* rename loop variables??? */
+    for (let i = 0; playerPoints < 5; i++) {
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
         alert(`Computer chose ${computerSelection}.`);
         alertRound();
 
         pointGiver();
-        console.log(playerPoints);
-        console.log(computerPoints);
+        roundScore();
     }
+    alert("Congratulations! You win! :D")
 }
 
 
