@@ -85,11 +85,12 @@ function pointGiver() {
         case "Tie":
             playerPoints = playerPoints;
             computerPoints = computerPoints;
+            /* This case is redundant, might not need this! */
             break;
     }
 }
 
-function roundScore() {
+function alertRoundScore() {
     alert(`The current score is ${playerPoints}-${computerPoints}`)
 }
 
@@ -130,7 +131,7 @@ function game() {
         alertRound();
 
         pointGiver();
-        roundScore();
+        alertRoundScore();
     }
     alert("Congratulations! You win! :D")
 }
