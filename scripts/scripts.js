@@ -75,20 +75,19 @@ function alertRound () {
 }
 
 function pointGiver() {
-    playerPoints = 0;
-    computerPoints = 0;
     switch (playRound(playerSelection, computerSelection)) {
         case "Win":
-            playerPoints = ++playerPoints;
+            ++playerPoints;
             break;
         case "Lose":
-            computerPoints = ++computerPoints;
+            ++computerPoints;
             break;
         case "Tie":
             playerPoints = playerPoints;
             computerPoints = computerPoints;
             break;
     }
+    /* Problem: this function doesn't stack the increments, the only outcomes are win 1-0, lose 0-1, or tie 0-0*/
 }
 /* 
 Make a function that gives a point (or doesn't give a point) to either player or computer based on round outcome 
@@ -139,8 +138,9 @@ else
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
-
-    for (let i = 0; i < 1000; i++) { /* loop that plays rounds */
+    playerPoints = 0;
+    computerPoints = 0;
+    for (let i = 0; playerPoints < 5; i++) { /* rename loop variables??? */
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
         alert(`Computer chose ${computerSelection}.`);
