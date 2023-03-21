@@ -30,3 +30,6 @@ This may be out of the scope of what I should be focusing on at this moment, but
 I didn't want to do it like that I just didn't know how to take only the first character and the rest of the characters! I knew once upon a time but patooie I forgor
 
 5) I think in the function pointGiver(), lines 87 and 88 are redundant and don't need to be there. I'm not to sure how well code that is just there "to make sure" is treated in JavaScript, but I decided to leave it in just in case.
+
+03/21/23
+Preview: https://gtcode93.github.io/rock-paper-scissors-project/
