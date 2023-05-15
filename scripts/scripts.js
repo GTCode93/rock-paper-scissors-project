@@ -8,6 +8,7 @@ function getComputerChoice() {
         return "Scissors"
     }
 }
+// getComputerChoice() will stay the same
 
 function selectionPrompt() {
     playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.");
@@ -15,7 +16,10 @@ function selectionPrompt() {
 }
 
 function userInputFormatter() {
-    /* This function will return toss an error "Uncaught TypeError: Cannot read properties of null (reading 'charAt')" if playerSelection is null. This happens due to cancelling the selectionPrompt() function which causes the variable playerSelection to be null, and this function cannot process the value null.*/
+    /* Will return toss an error "Uncaught TypeError: Cannot read properties of null 
+    (reading 'charAt')" if playerSelection is null. This happens due to cancelling the 
+    selectionPrompt() function which causes the variable playerSelection to be null, 
+    and this function cannot process the value null.*/
     firstCharacter = playerSelection.charAt(0);
     restOfCharacters = playerSelection.slice(1, -1);
     finalCharacter = playerSelection.slice(-1);
@@ -26,6 +30,7 @@ function userInputFormatter() {
 
     return firstCharacter + restOfCharacters + finalCharacter;
 }
+// userInputFormatter() should be changed to be simpler than the 1st, middle, and last characters
 
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
@@ -58,6 +63,7 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
 }
+// playRound() will mostly be the same, but instead console.log the outcomes + context
 
 function alertRound () {
     roundOutcome = playRound(playerSelection, computerSelection)
@@ -73,6 +79,7 @@ function alertRound () {
             break;
     }
 }
+// alertRound() should no longer have alerts and now have console.log()s
 
 function pointGiver() {
     switch (playRound(playerSelection, computerSelection)) {
@@ -89,10 +96,12 @@ function pointGiver() {
             break;
     }
 }
+// pointGiver(), look over comment L.95, should mostly stay the same.
 
 function alertRoundScore() {
     alert(`The current score is ${playerPoints}-${computerPoints}`)
 }
+// alertRoundScore() change name, and console.log instead of alert
 
 function whoWins () {
     if (playerPoints >= 5) {
@@ -104,6 +113,7 @@ function whoWins () {
     } else {
     }
 }
+// whoWins(), change alerts to console.log()s
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
@@ -124,6 +134,7 @@ function game() {
         }
     }
 }
+// Is this ideal?? Def look over the optimization of this function and if it's even needed
 
 game();
 
