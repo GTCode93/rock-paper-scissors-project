@@ -13,7 +13,6 @@ function selectionPrompt() {
     return playerSelection;
 }
 
-// How do I create a prompt for the console?...
 
 function userInputFormatter() {
     /* Will return toss an error "Uncaught TypeError: Cannot read properties of null 
@@ -109,14 +108,12 @@ function whoWins () {
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
-
     playerPoints = 0;
     computerPoints = 0;
-
     for (let i = 0; i < 100; i++) {
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
-        alert(`Computer chose ${computerSelection}.`);
+        console.log(`Computer chose ${computerSelection}.`);
         logRound();
         pointGiver();
         logRoundScore();
