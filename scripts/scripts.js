@@ -6,14 +6,14 @@ function getComputerChoice() {
         return "Paper"
     } else if (number <= 99) {
         return "Scissors"
-    }
-}
-// getComputerChoice() will stay the same
+    }}
 
 function selectionPrompt() {
     playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.");
     return playerSelection;
 }
+
+// How do I create a prompt for the console?...
 
 function userInputFormatter() {
     /* Will return toss an error "Uncaught TypeError: Cannot read properties of null 
@@ -36,50 +36,46 @@ function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case "Rock":
             if (computerSelection == "Scissors") {
-                return "Win";
+                return "Win"
             } else if (computerSelection == "Paper") {
-                return "Lose";
+                return "Lose"
             } else if (computerSelection == "Rock") {
                 return "Tie"
             }
             break;
         case "Paper":
             if (computerSelection == "Rock") {
-                return "Win";
+                return "Win"
             } else if (computerSelection == "Scissors") {
-                return "Lose";
+                return "Lose"
             } else if (computerSelection == "Paper") {
-                return "Tie";
+                return "Tie"
             }
             break;
         case "Scissors":
             if (computerSelection == "Paper") {
-                return "Win";
+                return "Win"
             } else if (computerSelection == "Rock") {
-                return "Lose";
+                return "Lose"
             } else if (computerSelection == "Scissors") {
-                return "Tie";
+                return "Tie"
             }
             break;
-    }
-}
-// playRound() will mostly be the same, but instead console.log the outcomes + context
+    }}
 
-function alertRound () {
+function logRound () {
     roundOutcome = playRound(playerSelection, computerSelection)
     switch (roundOutcome) {
         case "Win":
-            alert("You win this round!")
+            console.log("You win this round!");
             break;
         case "Lose":
-            alert("You lose this round!")
+            console.log("You lose this round!");
             break;
         case "Tie":
-            alert("It's a tie this round!")
+            console.log("It's a tie this round!");
             break;
-    }
-}
-// alertRound() should no longer have alerts and now have console.log()s
+    }}
 
 function pointGiver() {
     switch (playRound(playerSelection, computerSelection)) {
@@ -94,26 +90,22 @@ function pointGiver() {
             computerPoints = computerPoints;
             /* This case is redundant, might not need this! */
             break;
-    }
-}
-// pointGiver(), look over comment L.95, should mostly stay the same.
+    }}
+// pointGiver(), look over comment L.95
 
-function alertRoundScore() {
-    alert(`The current score is ${playerPoints}-${computerPoints}`)
+function logRoundScore() {
+    console.log(`The current score is ${playerPoints}-${computerPoints}`);
 }
-// alertRoundScore() change name, and console.log instead of alert
 
 function whoWins () {
     if (playerPoints >= 5) {
-        alert("Congratulations you win!")
+        console.log("Congratulations you win!");
         return "Game Over";
     } else if (computerPoints >= 5) {
-        alert("Sorry, you've lost!")
+        console.log("Sorry, you've lost!");
         return "Game Over";
     } else {
-    }
-}
-// whoWins(), change alerts to console.log()s
+    }}
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
@@ -125,15 +117,14 @@ function game() {
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
         alert(`Computer chose ${computerSelection}.`);
-        alertRound();
+        logRound();
         pointGiver();
-        alertRoundScore();
+        logRoundScore();
         if (whoWins() == "Game Over") {
             break;
         } else {
-        }
-    }
-}
+        }}}
+
 // Is this ideal?? Def look over the optimization of this function and if it's even needed
 
 game();
