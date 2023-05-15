@@ -9,10 +9,8 @@ function getComputerChoice() {
     }}
 
 function selectionPrompt() {
-    playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.");
-    return playerSelection;
+    return playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.")
 }
-
 
 function userInputFormatter() {
     /* Will return toss an error "Uncaught TypeError: Cannot read properties of null 
@@ -20,16 +18,9 @@ function userInputFormatter() {
     selectionPrompt() function which causes the variable playerSelection to be null, 
     and this function cannot process the value null.*/
     firstCharacter = playerSelection.charAt(0);
-    restOfCharacters = playerSelection.slice(1, -1);
-    finalCharacter = playerSelection.slice(-1);
-
-    firstCharacter = firstCharacter.toUpperCase();
-    restOfCharacters = restOfCharacters.toLowerCase();
-    finalCharacter = finalCharacter.toLowerCase();
-
-    return firstCharacter + restOfCharacters + finalCharacter;
+    restOfCharacters = playerSelection.slice(1);
+    return firstCharacter.toUpperCase() + restOfCharacters.toLowerCase()
 }
-// userInputFormatter() should be changed to be simpler than the 1st, middle, and last characters
 
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
