@@ -31,5 +31,5 @@ I didn't want to do it like that I just didn't know how to take only the first c
 
 5) I think in the function pointGiver(), lines 87 and 88 are redundant and don't need to be there. I'm not to sure how well code that is just there "to make sure" is treated in JavaScript, but I decided to leave it in just in case.
 
-03/21/23
-Preview: https://gtcode93.github.io/rock-paper-scissors-project/
+05/15/2023
+PreThoughts for Revisiting RPS: Hello! I've learned the basics of DOM Manipulation and Events and now it's time for me to give the RPS project a simple UI! But, because of how I made this project (with prompts and alert functions,) I need to change this project to what TOP wanted. I am first creating a branch called "rps-rework" where I will recreate the project so the RPS is only accessible and playable from the console. This'll then not only be a little simpler to move onto the "rps-ui" branch where I then create a simple UI, but also good practice for using branching techniques and commands!
