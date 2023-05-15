@@ -75,13 +75,7 @@ function pointGiver() {
         case "Lose":
             ++computerPoints;
             break;
-        case "Tie":
-            playerPoints = playerPoints;
-            computerPoints = computerPoints;
-            /* This case is redundant, might not need this! */
-            break;
     }}
-// pointGiver(), look over comment L.95
 
 function logRoundScore() {
     console.log(`The current score is ${playerPoints}-${computerPoints}`);
@@ -99,12 +93,11 @@ function whoWins () {
 
 function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
-    playerPoints = 0;
-    computerPoints = 0;
+    playerPoints = 0; computerPoints = 0;
     for (let i = 0; i < 100; i++) {
         playerSelection = userInputFormatter(selectionPrompt());
         computerSelection = getComputerChoice();
-        console.log(`Computer chose ${computerSelection}.`);
+        console.log(`Computer chose ${computerSelection}`);
         logRound();
         pointGiver();
         logRoundScore();
@@ -112,8 +105,6 @@ function game() {
             break;
         } else {
         }}}
-
-// Is this ideal?? Def look over the optimization of this function and if it's even needed
 
 game();
 
