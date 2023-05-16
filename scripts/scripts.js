@@ -11,14 +11,14 @@ function getComputerChoice() {
 /* function selectionPrompt() {
     return playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.")
 } */
-// Function no longer needed
+// Function no longer needed for UI rework
 
 /* function userInputFormatter() {
     firstCharacter = playerSelection.charAt(0);
     restOfCharacters = playerSelection.slice(1);
     return firstCharacter.toUpperCase() + restOfCharacters.toLowerCase()
 } */
-// Function no longer needed
+// Function no longer needed for UI rework
 
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
@@ -88,6 +88,32 @@ function whoWins () {
         return "Game Over";
     } else {
     }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+To Do List:
+1) Edit console.log()s and access if they're useful or not to having a UI
+
+2) Create 3 buttons with id's rockButton, paperButton, scissorsButton in HTML page.
+
+3) Move HTML <script> element to head, add defer keyword
+
+4) Create new <div> element after button elements with id results to display results of rounds
+
+5) Add header to page <h1> element with "Let's play Rock Paper Scissors!"
+*/
 
 /* function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
