@@ -8,19 +8,17 @@ function getComputerChoice() {
         return "Scissors"
     }}
 
-function selectionPrompt() {
+/* function selectionPrompt() {
     return playerSelection = prompt("Type in Rock, Paper, or Scissors for this round.")
-}
+} */
+// Function no longer needed
 
-function userInputFormatter() {
-    /* Will return toss an error "Uncaught TypeError: Cannot read properties of null 
-    (reading 'charAt')" if playerSelection is null. This happens due to cancelling the 
-    selectionPrompt() function which causes the variable playerSelection to be null, 
-    and this function cannot process the value null.*/
+/* function userInputFormatter() {
     firstCharacter = playerSelection.charAt(0);
     restOfCharacters = playerSelection.slice(1);
     return firstCharacter.toUpperCase() + restOfCharacters.toLowerCase()
-}
+} */
+// Function no longer needed
 
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
@@ -91,7 +89,7 @@ function whoWins () {
     } else {
     }}
 
-function game() {
+/* function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
     playerPoints = 0; computerPoints = 0;
     for (let i = 0; i < 100; i++) {
@@ -104,9 +102,10 @@ function game() {
         if (whoWins() == "Game Over") {
             break;
         } else {
-        }}}
-
-game();
+        }}} 
+game();        
+*/
+// Commented to create new system of playing rounds and keeping score
 
 
 
