@@ -87,8 +87,11 @@ function whoWins () {
     } else {
     }}
 
+const rockButton = document.querySelector("#rockButton");
+const paperButton = document.querySelector("#paperButton");
+const scissorsButton = document.querySelector("#scissorsButton");
 
-
+const resultsDiv = document.querySelector("#results");
 
 
 
@@ -102,10 +105,11 @@ function whoWins () {
 
 /* 
 To Do List:
-1) Edit console.log()s and access if they're useful or not to having a UI
+1)
 
-2) Write query selectors for three buttons and div.
 */
+
+
 
 /* function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
