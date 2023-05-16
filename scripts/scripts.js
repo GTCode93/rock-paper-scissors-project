@@ -55,13 +55,13 @@ function logRound () {
     roundOutcome = playRound(playerSelection, computerSelection)
     switch (roundOutcome) {
         case "Win":
-            console.log("You win this round!");
+            // code
             break;
         case "Lose":
-            console.log("You lose this round!");
+            // code
             break;
         case "Tie":
-            console.log("It's a tie this round!");
+            // code
             break;
     }}
 
@@ -76,16 +76,14 @@ function pointGiver() {
     }}
 
 function logRoundScore() {
-    console.log(`The current score is ${playerPoints}-${computerPoints}`);
+    /* This function should definitely be reworked for the new UI system. */
 }
 
 function whoWins () {
     if (playerPoints >= 5) {
-        console.log("Congratulations you win!");
-        return "Game Over";
+        // code if Player wins
     } else if (computerPoints >= 5) {
-        console.log("Sorry, you've lost!");
-        return "Game Over";
+        // code if Computer wins
     } else {
     }}
 
@@ -106,13 +104,7 @@ function whoWins () {
 To Do List:
 1) Edit console.log()s and access if they're useful or not to having a UI
 
-2) Create 3 buttons with id's rockButton, paperButton, scissorsButton in HTML page.
-
-3) Move HTML <script> element to head, add defer keyword
-
-4) Create new <div> element after button elements with id results to display results of rounds
-
-5) Add header to page <h1> element with "Let's play Rock Paper Scissors!"
+2) Write query selectors for three buttons and div.
 */
 
 /* function game() {
