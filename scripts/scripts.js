@@ -87,11 +87,18 @@ function whoWins () {
     } else {
     }}
 
+let playerSelection;
+let computerSelection;
+let playerPoints;
+let computerPoints;
+
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
 
 const resultsDiv = document.querySelector("#results");
+
+rockButton
 
 
 
