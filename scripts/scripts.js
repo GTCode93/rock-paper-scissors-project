@@ -55,13 +55,13 @@ function logRound () {
     roundOutcome = playRound(playerSelection, computerSelection)
     switch (roundOutcome) {
         case "Win":
-            
+            resultsDiv.appendChild(displayWin);
             break;
         case "Lose":
-            // code
+            resultsDiv.appendChild(displayLose);
             break;
         case "Tie":
-            // code
+            resultsDiv.appendChild(displayTie);
             break;
     }}
 
@@ -106,17 +106,21 @@ displayWin.style.color = "yellow";
 
 rockButton.addEventListener("click", () => {
     playerSelection = "Rock";
+    getComputerChoice();
 });
 
 paperButton.addEventListener("click", () => {
     playerSelection = "Paper";
+    getComputerChoice();
 });
 
 scissorsButton.addEventListener("click", () => {
     playerSelection = "Scissors";
+    getComputerChoice();
 });
 
 playRound(playerSelection, computerSelection);
+logRound();
 
 
 
