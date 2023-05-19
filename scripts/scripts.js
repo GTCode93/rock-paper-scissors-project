@@ -82,9 +82,9 @@ function logRoundScore() {
 
 function whoWins() {
     if (playerPoints >= 5) {
-        // code if Player wins
+        outcomeDisplay.textContent = "Outcome: You Win The Game! :D";
     } else if (computerPoints >= 5) {
-        // code if Computer wins
+        outcomeDisplay.textContent = "Outcome: You Lose The Game! D:"
     } else {
     }}
 
@@ -105,12 +105,11 @@ for(let i=1; i <= 100; i++) {
         computerSelection = getComputerChoice();
         playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
         computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
-        
+        playRound(playerSelection, computerSelection);
+        logRound();
+        pointGiver(); 
+        logRoundScore();
     })); 
-    playRound(playerSelection, computerSelection);
-    logRound();
-    pointGiver(); 
-    logRoundScore();
     if(whoWins() == "Game Over") {
         break;
     }
