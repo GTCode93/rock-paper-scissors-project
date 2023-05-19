@@ -73,7 +73,10 @@ function pointGiver() {
         case "Lose":
             ++computerPoints;
             break;
-            /* For a cleaner set up, maybe look to have a default setting for this conditional. */
+            
+        default: 
+        playerPoints = playerPoints;
+        computerPoints = computerPoints;
     }}
 
 function logRoundScore() {
@@ -107,9 +110,9 @@ for(let i=1; i <= 100; i++) {
         computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
         playRound(playerSelection, computerSelection);
         logRound();
-        pointGiver(); 
-        logRoundScore();
     })); 
+    pointGiver(); 
+    logRoundScore();
     if(whoWins() == "Game Over") {
         break;
     }
