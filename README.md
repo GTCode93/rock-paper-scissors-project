@@ -37,3 +37,6 @@ PreThoughts for Revisiting RPS: Hello! I've learned the basics of DOM Manipulati
 
 05/16/2023
 Created rps-ui branch! 
+
+05/19/2023
+Figured out how to make the project play at least one round! The way I did this was applying the playRound() and logRound() functions to the button's event listeners. Basically, whenever a button is pressed, the player and computer selections are displayed, playRound() plays the round, and logRound() displays the outcome of the round. 
