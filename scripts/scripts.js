@@ -101,32 +101,21 @@ const currentScoreDisplay = document.querySelector("#currentScore");
 let playerSelection; let computerSelection;
 let playerPoints = 0; let computerPoints = 0;
 
-for(let i=1; i <= 100; i++) {
-    selectionButtons.forEach(button => button.addEventListener("click", () => {
-        playerSelection = button.textContent;
-        computerSelection = getComputerChoice();
-        playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
-        computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
-        roundOutcome = playRound(playerSelection, computerSelection);
-        logRound();
-        pointGiver(roundOutcome); 
-        logRoundScore();
-        whoWins();
-    }));
-}
 
-/* Syntax of this taken/inspired from https://www.youtube.com/watch?v=n1_vHArDBRA */
+selectionButtons.forEach(button => button.addEventListener("click", () => {
+    playerSelection = button.textContent;
+    computerSelection = getComputerChoice();
+    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
+    computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
+    roundOutcome = playRound(playerSelection, computerSelection);
+    logRound();
+    pointGiver(roundOutcome); 
+    logRoundScore();
+    whoWins()
+}));
 
-/* 
+/*
 *How does the final picture of the game ending look like? There has to be text saying "You Win! :D" and maybe if you press the buttons again it'll run again?? Not sure, but think about the end.
-
-* The reason the 5 point games worked is because of the loop. How do I take the set up we have right now and put it in a loop?
-
-__
-*Currently, Every time a button is pressed, player and computer selections are decided and displayed. This is technically still just one round.
-The next things to reevaluate is how the point giving system works how and when and how to log the current round score. Currently, it seems as if neither are working.
-
-
 */
 
 
