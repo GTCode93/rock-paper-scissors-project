@@ -89,33 +89,27 @@ function whoWins() {
     }}
 
 const selectionButtons = document.querySelectorAll(".selectionButtons")
-selectionButtons.forEach(button => button.addEventListener("click", () => {
-    playerSelection = button.textContent;
-    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
-}));
 
 const resultsDiv = document.querySelector("#results");
 const playerSelectionDisplay = document.querySelector("#playerSelection");
 const computerSelectionDisplay = document.querySelector("#computerSelection");
 const outcomeDisplay = document.querySelector("#outcome");
-
-let playerSelection; let computerSelection;
-let playerPoints = 0; let computerPoints = 0;
-
-rockButton.addEventListener("click", () => {
-    playerSelection = "Rock";
-});
-
-paperButton.addEventListener("click", () => {
-    playerSelection = "Paper";
-});
-
-scissorsButton.addEventListener("click", () => {
-    playerSelection = "Scissors";
-});
+const currentScoreDisplay = document.querySelector("#currentScore");
 
 for(let i=1; i <= 100; i++) {
-
+    let playerSelection; let computerSelection;
+    let playerPoints = 0; let computerPoints = 0;
+    selectionButtons.forEach(button => button.addEventListener("click", () => {
+        playerSelection = button.textContent;
+        playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
+    })); /* Syntax of this taken/inspired from https://www.youtube.com/watch?v=n1_vHArDBRA */
+    computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    logRound();
+    pointGiver(); /* logRoundScore(); */
+    if(whoWins() == "Game Over") {
+        break;
+    }
 }
 
 /* 
