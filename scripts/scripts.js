@@ -95,7 +95,10 @@ let computerPoints;
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
+
 const resultsDiv = document.querySelector("#results");
+const playerSelectionDisplay = document.querySelector("#playerSelection");
+const computerSelectionDisplay = document.querySelector("#computerSelection");
 
 const displayWin = document.createElement("h3");
 displayWin.style.color = "green";
@@ -106,17 +109,17 @@ displayWin.style.color = "yellow";
 
 rockButton.addEventListener("click", () => {
     playerSelection = "Rock";
-    getComputerChoice();
+    computerSelection = getComputerChoice(); 
+    computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
+    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
 });
 
 paperButton.addEventListener("click", () => {
-    playerSelection = "Paper";
-    getComputerChoice();
+
 });
 
 scissorsButton.addEventListener("click", () => {
-    playerSelection = "Scissors";
-    getComputerChoice();
+    
 });
 
 playRound(playerSelection, computerSelection);
