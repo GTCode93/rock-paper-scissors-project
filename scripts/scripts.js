@@ -88,47 +88,35 @@ function whoWins() {
     } else {
     }}
 
-let playerSelection; let computerSelection;
-let playerPoints = 0; let computerPoints = 0;
-
-const rockButton = document.querySelector("#rockButton");
-const paperButton = document.querySelector("#paperButton");
-const scissorsButton = document.querySelector("#scissorsButton");
+const selectionButtons = document.querySelectorAll(".selectionButtons")
+selectionButtons.forEach(button => button.addEventListener("click", () => {
+    playerSelection = button.textContent;
+    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
+}));
 
 const resultsDiv = document.querySelector("#results");
 const playerSelectionDisplay = document.querySelector("#playerSelection");
 const computerSelectionDisplay = document.querySelector("#computerSelection");
 const outcomeDisplay = document.querySelector("#outcome");
 
+let playerSelection; let computerSelection;
+let playerPoints = 0; let computerPoints = 0;
+
 rockButton.addEventListener("click", () => {
     playerSelection = "Rock";
-    computerSelection = getComputerChoice(); 
-    computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
-    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
-    
-    playRound(playerSelection, computerSelection);
-    logRound();
 });
 
 paperButton.addEventListener("click", () => {
     playerSelection = "Paper";
-    computerSelection = getComputerChoice(); 
-    computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
-    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
-
-    playRound(playerSelection, computerSelection);
-    logRound();
 });
 
 scissorsButton.addEventListener("click", () => {
     playerSelection = "Scissors";
-    computerSelection = getComputerChoice(); 
-    computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
-    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
-
-    playRound(playerSelection, computerSelection);
-    logRound();
 });
+
+for(let i=1; i <= 100; i++) {
+
+}
 
 /* 
 So far this code only plays ONE round of RPS!
@@ -146,7 +134,15 @@ Now I need to figure out how to play several rounds with some things and goals i
 
 Notes:
 * The reason the 5 point games worked is because of the loop. How do I take the set up we have right now and put it in a loop?
+
+* I did look at an example of how someone did that, and I think to get it to work with a loop I'll need to create a node list of the buttons. To do that I'll need a class that is the same amongst each button, and then create a const variable for that, and THEN make an event listener. How do I do that in my own way?
+GOAL: Recreate buttons so they are in a node list using querySelectorAll. Give their HTML elements the same class and delete the function calls in the event listeners. The only thing the buttons will do is declare the playerSelection is the value that the button's text is.
 */
+
+
+
+
+
 
 
 /* function game() {
