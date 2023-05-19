@@ -55,7 +55,7 @@ function logRound () {
     roundOutcome = playRound(playerSelection, computerSelection)
     switch (roundOutcome) {
         case "Win":
-            // code
+            
             break;
         case "Lose":
             // code
@@ -95,8 +95,14 @@ let computerPoints;
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
-
 const resultsDiv = document.querySelector("#results");
+
+const displayWin = document.createElement("h3");
+displayWin.style.color = "green";
+const displayLose = document.createElement("h3");
+displayWin.style.color = "red";
+const displayTie = document.createElement("h3")
+displayWin.style.color = "yellow";
 
 rockButton.addEventListener("click", () => {
     playerSelection = "Rock";
