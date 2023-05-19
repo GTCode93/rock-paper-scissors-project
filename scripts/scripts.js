@@ -131,7 +131,21 @@ scissorsButton.addEventListener("click", () => {
     logRound();
 });
 
+/* 
+So far this code only plays ONE round of RPS!
+Now I need to figure out how to play several rounds with some things and goals in mind:
+    1) I'll need to edit the HTML h1 to say "First to Five Wins!"
+    
+    2) Create a new element to display the current score. Likely using literals.
 
+    3) ^^ Dom methods for this too
+
+    4) Look back at the old game() function and see how I even got to playing 5 rounds in the first place. 
+
+    5) Take a look back at the functions used and how they were used in the game() function. How can I use them with this new set up?
+
+    6) How does the final picture of the game ending look like? There has to be text saying "You Win! :D" and maybe if you press the buttons again it'll run again?? Not sure, but think about the end.
+*/
 
 
 
