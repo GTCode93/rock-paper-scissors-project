@@ -52,7 +52,7 @@ function playRound(playerSelection, computerSelection) {
     }}
 
 function logRound () {
-    roundOutcome = playRound(playerSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
     switch (roundOutcome) {
         case "Win":
             outcomeDisplay.textContent = "Outcome: Win! :)";
@@ -65,18 +65,17 @@ function logRound () {
             break;
     }}
 
-function pointGiver() {
-    switch (playRound(playerSelection, computerSelection)) {
+function pointGiver(playerPoints, computerPoints) {
+    switch (roundOutcome) {
         case "Win":
             ++playerPoints;
             break;
         case "Lose":
             ++computerPoints;
             break;
-            
         default: 
-        playerPoints = playerPoints;
-        computerPoints = computerPoints;
+        playerPoints;
+        computerPoints;
     }}
 
 function logRoundScore() {
@@ -108,11 +107,11 @@ for(let i=1; i <= 100; i++) {
         computerSelection = getComputerChoice();
         playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
         computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
-        playRound(playerSelection, computerSelection);
+        roundOutcome = playRound(playerSelection, computerSelection);
         logRound();
+        pointGiver(playerPoints, computerPoints); logRoundScore();
     })); 
-    pointGiver(); 
-    logRoundScore();
+    pointGiver(playerPoints, computerPoints); logRoundScore();
     if(whoWins() == "Game Over") {
         break;
     }
@@ -121,15 +120,15 @@ for(let i=1; i <= 100; i++) {
 /* Syntax of this taken/inspired from https://www.youtube.com/watch?v=n1_vHArDBRA */
 
 /* 
-So far this code only plays ONE round of RPS!
-Now I need to figure out how to play several rounds with some things and goals in mind:
+*How does the final picture of the game ending look like? There has to be text saying "You Win! :D" and maybe if you press the buttons again it'll run again?? Not sure, but think about the end.
 
-    6) How does the final picture of the game ending look like? There has to be text saying "You Win! :D" and maybe if you press the buttons again it'll run again?? Not sure, but think about the end.
-
-Notes:
 * The reason the 5 point games worked is because of the loop. How do I take the set up we have right now and put it in a loop?
 
-GOAL: Display the computer selection and rewrite the logRoundScore() function
+__
+*Currently, Every time a button is pressed, player and computer selections are decided and displayed. This is technically still just one round.
+The next things to reevaluate is how the point giving system works how and when and how to log the current round score. Currently, it seems as if neither are working.
+
+
 */
 
 
