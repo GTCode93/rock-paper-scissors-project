@@ -73,13 +73,14 @@ function pointGiver() {
         case "Lose":
             ++computerPoints;
             break;
+            /* For a cleaner set up, maybe look to have a default setting for this conditional. */
     }}
 
 function logRoundScore() {
     /* This function should definitely be reworked for the new UI system. */
 }
 
-function whoWins () {
+function whoWins() {
     if (playerPoints >= 5) {
         // code if Player wins
     } else if (computerPoints >= 5) {
@@ -87,10 +88,8 @@ function whoWins () {
     } else {
     }}
 
-let playerSelection;
-let computerSelection;
-let playerPoints;
-let computerPoints;
+let playerSelection; let computerSelection;
+let playerPoints = 0; let computerPoints = 0;
 
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
@@ -134,8 +133,7 @@ scissorsButton.addEventListener("click", () => {
 /* 
 So far this code only plays ONE round of RPS!
 Now I need to figure out how to play several rounds with some things and goals in mind:
-    1) I'll need to edit the HTML h1 to say "First to Five Wins!"
-    
+
     2) Create a new element to display the current score. Likely using literals.
 
     3) ^^ Dom methods for this too
@@ -145,35 +143,33 @@ Now I need to figure out how to play several rounds with some things and goals i
     5) Take a look back at the functions used and how they were used in the game() function. How can I use them with this new set up?
 
     6) How does the final picture of the game ending look like? There has to be text saying "You Win! :D" and maybe if you press the buttons again it'll run again?? Not sure, but think about the end.
+
+Notes:
+* The reason the 5 point games worked is because of the loop. How do I take the set up we have right now and put it in a loop?
 */
-
-
-
-
-
-
-/* 
-To Do List:
-1)
-
-*/
-
 
 
 /* function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
     playerPoints = 0; computerPoints = 0;
-    for (let i = 0; i < 100; i++) {
+    
+    for (let i = 1; i <= 100; i++) {
         playerSelection = userInputFormatter(selectionPrompt());
+
         computerSelection = getComputerChoice();
+
         console.log(`Computer chose ${computerSelection}`);
+
         logRound();
+
         pointGiver();
+
         logRoundScore();
+
         if (whoWins() == "Game Over") {
             break;
-        } else {
-        }}} 
+        }
+    }} 
 game();        
 */
 // Commented to create new system of playing rounds and keeping score
