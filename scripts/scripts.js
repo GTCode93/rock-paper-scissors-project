@@ -65,7 +65,7 @@ function logRound () {
             break;
     }}
 
-function pointGiver(playerPoints, computerPoints) {
+function pointGiver(roundOutcome) {
     switch (roundOutcome) {
         case "Win":
             ++playerPoints;
@@ -109,12 +109,10 @@ for(let i=1; i <= 100; i++) {
         computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
         roundOutcome = playRound(playerSelection, computerSelection);
         logRound();
-        pointGiver(playerPoints, computerPoints); logRoundScore();
-    })); 
-    pointGiver(playerPoints, computerPoints); logRoundScore();
-    if(whoWins() == "Game Over") {
-        break;
-    }
+        pointGiver(roundOutcome); 
+        logRoundScore();
+        whoWins();
+    }));
 }
 
 /* Syntax of this taken/inspired from https://www.youtube.com/watch?v=n1_vHArDBRA */
