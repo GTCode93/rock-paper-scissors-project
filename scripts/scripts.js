@@ -98,10 +98,19 @@ const scissorsButton = document.querySelector("#scissorsButton");
 
 const resultsDiv = document.querySelector("#results");
 
-rockButton
+rockButton.addEventListener("click", () => {
+    playerSelection = "Rock";
+});
 
+paperButton.addEventListener("click", () => {
+    playerSelection = "Paper";
+});
 
+scissorsButton.addEventListener("click", () => {
+    playerSelection = "Scissors";
+});
 
+playRound(playerSelection, computerSelection);
 
 
 
