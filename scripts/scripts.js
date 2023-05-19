@@ -55,13 +55,13 @@ function logRound () {
     roundOutcome = playRound(playerSelection, computerSelection)
     switch (roundOutcome) {
         case "Win":
-            resultsDiv.appendChild(displayWin);
+            outcomeDisplay.textContent = "Outcome: Win! :)";
             break;
         case "Lose":
-            resultsDiv.appendChild(displayLose);
+            outcomeDisplay.textContent = "Outcome: Lose! :("
             break;
         case "Tie":
-            resultsDiv.appendChild(displayTie);
+            outcomeDisplay.textContent = "Outcome: Tie! :|"
             break;
     }}
 
@@ -99,31 +99,37 @@ const scissorsButton = document.querySelector("#scissorsButton");
 const resultsDiv = document.querySelector("#results");
 const playerSelectionDisplay = document.querySelector("#playerSelection");
 const computerSelectionDisplay = document.querySelector("#computerSelection");
-
-const displayWin = document.createElement("h3");
-displayWin.style.color = "green";
-const displayLose = document.createElement("h3");
-displayWin.style.color = "red";
-const displayTie = document.createElement("h3")
-displayWin.style.color = "yellow";
+const outcomeDisplay = document.querySelector("#outcome");
 
 rockButton.addEventListener("click", () => {
     playerSelection = "Rock";
     computerSelection = getComputerChoice(); 
     computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
     playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
+    
+    playRound(playerSelection, computerSelection);
+    logRound();
 });
 
 paperButton.addEventListener("click", () => {
+    playerSelection = "Paper";
+    computerSelection = getComputerChoice(); 
+    computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
+    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
 
+    playRound(playerSelection, computerSelection);
+    logRound();
 });
 
 scissorsButton.addEventListener("click", () => {
-    
-});
+    playerSelection = "Scissors";
+    computerSelection = getComputerChoice(); 
+    computerSelectionDisplay.textContent = `Computer Selection: ${computerSelection}`;
+    playerSelectionDisplay.textContent = `Player Selection: ${playerSelection}`;
 
-playRound(playerSelection, computerSelection);
-logRound();
+    playRound(playerSelection, computerSelection);
+    logRound();
+});
 
 
 
