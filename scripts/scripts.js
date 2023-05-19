@@ -83,13 +83,14 @@ function logRoundScore() {
 }
 
 function whoWins() {
-    if (playerPoints >= 5) {
+    if (playerPoints == 5) {
         outcomeDisplay.textContent = "Outcome: You Win The Game! :D";
-    } else if (computerPoints >= 5) {
+    } else if (computerPoints == 5) {
         outcomeDisplay.textContent = "Outcome: You Lose The Game! D:"
     } else {
     }}
 
+const buttonsDiv = document.querySelector("#buttons");
 const selectionButtons = document.querySelectorAll(".selectionButtons")
 
 const resultsDiv = document.querySelector("#results");
@@ -114,40 +115,25 @@ selectionButtons.forEach(button => button.addEventListener("click", () => {
     whoWins()
 }));
 
-/*
-*How does the final picture of the game ending look like? There has to be text saying "You Win! :D" and maybe if you press the buttons again it'll run again?? Not sure, but think about the end.
-*/
-
-
-
-
-
-
+/* The event listener was mostly inspired from this video: https://www.youtube.com/watch?v=n1_vHArDBRA */
 
 /* function game() {
     alert("Let's play Rock, Paper, Scissors! First to 5 wins.");
     playerPoints = 0; computerPoints = 0;
-    
     for (let i = 1; i <= 100; i++) {
         playerSelection = userInputFormatter(selectionPrompt());
-
         computerSelection = getComputerChoice();
-
         console.log(`Computer chose ${computerSelection}`);
-
         logRound();
-
         pointGiver();
-
         logRoundScore();
-
         if (whoWins() == "Game Over") {
             break;
         }
     }} 
-game();        
+game();
 */
-// Commented to create new system of playing rounds and keeping score
+/* Old function to play the game through alerts and prompts, used now as a template for the new UI system. */
 
 
 
